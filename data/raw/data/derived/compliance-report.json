@@ -1,0 +1,73 @@
+{
+  "assessment": {
+    "assessment_id": "UBI-2026-0267-STAGE5",
+    "assessment_name": "Policy Compliance Assessment",
+    "assessment_date": "2026-07-24",
+    "assessor": "Aliu Muhammed Ohiada",
+    "framework": "UBI Policy Control Framework",
+    "version": "1.0"
+  },
+  "summary": {
+    "total_controls": 3,
+    "compliant": 0,
+    "non_compliant": 3,
+    "malformed": 0,
+    "active_exceptions": 0,
+    "expired_exceptions": 0,
+    "overall_status": "NON_COMPLIANT"
+  },
+  "controls": [
+    {
+      "control_id": "NF.IDENTITY.PRIVILEGED_ASSURANCE",
+      "control_name": "Privileged Identity Assurance",
+      "owner": "Identity and Access Management",
+      "status": "NON_COMPLIANT",
+      "severity": "HIGH",
+      "decision": "DENY",
+      "violation_code": "PRIV_HUMAN_MFA_NOT_PHISHING_RESISTANT",
+      "evidence_source": [
+        "Identity inventory",
+        "MFA configuration",
+        "Privileged account records"
+      ],
+      "recommendation": "Implement phishing-resistant MFA for all privileged human accounts, assign accountable owners to privileged service accounts, and rotate privileged service account credentials at least every 90 days."
+    },
+    {
+      "control_id": "NF.ENDPOINT.MANAGED_HEALTH",
+      "control_name": "Managed Endpoint Health",
+      "owner": "Endpoint Security",
+      "status": "NON_COMPLIANT",
+      "severity": "HIGH",
+      "decision": "DENY",
+      "violation_code": "ENDPOINT_EDR_UNHEALTHY",
+      "evidence_source": [
+        "Endpoint inventory",
+        "EDR health status",
+        "Disk encryption status",
+        "Last check-in records"
+      ],
+      "recommendation": "Ensure all corporate endpoints are managed, encrypted, protected by a healthy EDR agent, and checked into the management platform within the last 24 hours."
+    },
+    {
+      "control_id": "NF.STORAGE.RESTRICTED_PROTECTION",
+      "control_name": "Restricted Storage Protection",
+      "owner": "Infrastructure Security",
+      "status": "NON_COMPLIANT",
+      "severity": "CRITICAL",
+      "decision": "DENY",
+      "violation_code": "IMMUTABLE_LOG_SINK_MISSING",
+      "evidence_source": [
+        "Storage configuration",
+        "Data classification records",
+        "Encryption configuration",
+        "Logging configuration"
+      ],
+      "recommendation": "Restrict sensitive storage to Confidential or Restricted classifications, enforce encryption, disable public access, and configure immutable logging for all protected storage."
+    }
+  ],
+  "generated_by": {
+    "tool": "Open Policy Agent (OPA)",
+    "policy_bundle": "policy-bundle",
+    "report_version": "1.0"
+  }
+}
