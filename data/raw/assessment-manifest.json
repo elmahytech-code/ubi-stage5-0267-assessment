@@ -1,0 +1,11 @@
+assessment_id": "UBI-2026-0267-STAGE5",
+  "candidate": "Aliu Muhammed Ohiada",
+  "assessment_type": "Policy-as-Code",
+  "framework": [
+    "NIST CSF 2.0",
+    "ISO/IEC 27001:2022"
+  ],
+  "controls_assessed": 3,
+  "overall_status": "NON_COMPLIANT",
+  "submission_version": "1.0"
+}
