@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Endpoint Schema",
+  "description": "Schema for validating endpoint inventory used in policy evaluation.",
+  "type": "object",
+
+  "required": [
+    "id",
+    "managed",
+    "disk_encrypted",
+    "edr_status",
+    "last_seen_hours"
+  ],
+
+  "properties": {
+
+    "id": {
+      "type": "string",
+      "description": "Unique endpoint identifier."
+    },
+
+    "managed": {
+      "type": "boolean",
+      "description": "Indicates whether the endpoint is centrally managed."
+    },
+
+    "disk_encrypted": {
+      "type": "boolean",
+      "description": "Whether full disk encryption is enabled."
+    },
+
+    "edr_status": {
+      "type": "string",
+      "enum": [
+        "healthy",
+        "unhealthy"
+      ],
+      "description": "Current health of the Endpoint Detection and Response agent."
+    },
+
+    "last_seen_hours": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Hours since the endpoint last checked in."
+    }
+
+  },
+
+  "additionalProperties": false
+}

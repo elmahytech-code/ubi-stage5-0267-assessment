@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Storage Schema",
+  "description": "Schema for validating storage resources used in policy evaluation.",
+  "type": "object",
+
+  "required": [
+    "id",
+    "classification",
+    "public",
+    "encrypted",
+    "immutable_log_sink"
+  ],
+
+  "properties": {
+
+    "id": {
+      "type": "string",
+      "description": "Unique storage resource identifier."
+    },
+
+    "classification": {
+      "type": "string",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ],
+      "description": "Information classification."
+    },
+
+    "public": {
+      "type": "boolean",
+      "description": "Indicates whether the storage resource is publicly accessible."
+    },
+
+    "encrypted": {
+      "type": "boolean",
+      "description": "Indicates whether encryption is enabled."
+    },
+
+    "immutable_log_sink": {
+      "type": "boolean",
+      "description": "Indicates whether logs are sent to an immutable log sink."
+    }
+
+  },
+
+  "additionalProperties": false
+}
